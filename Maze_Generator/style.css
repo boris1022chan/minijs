@@ -1,0 +1,35 @@
+body {
+    padding: 0;
+
+}
+
+.form {
+    margin: 5%;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid black;
+}
+
+table {
+    margin: 0 auto;
+}
+
+input {
+    width: 300px;
+}
+
+.maze {
+    width: 100vw;
+    height: 100vh - 10px;
+    text-align: center;
+    display: none;
+}
+
+canvas {
+    margin: 0px auto;
+}
+
+.download, .reload {
+    display: none;
+    margin: 10px;
+}

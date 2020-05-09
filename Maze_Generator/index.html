@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+    <script type="text/javascript" src="html2canvas.js"></script>
+
+    <title>Maze Generator</title>
+</head>
+<body>
+    <div class="form">
+        <h1>Information About The Maze</h1>
+        <table>
+            <tr>
+                <td><label>Columns: </label></td>
+                <td><input id="col" type="number" name="cols" placeholder="Enter number of columns"></td>
+            </tr>
+            <tr>
+                <td><label>Rows: </label></td>
+                <td><input id="row" type="number" name="rows" placeholder="Enter number of rows"></td>
+            </tr>
+        </table>
+        <button onclick="generate()">Generate</button>
+    </div>
+
+    <div class="maze">
+        <canvas id="mainCanvas" width=400 height=400 style="background-color: white"></canvas>
+        <script type="text/javascript" src="generate_maze.js"></script>
+        <br />
+        <button class="download" onclick="download()">Download Maze</button>
+        <button class="reload" onclick="reload()">Get a new maze</button>
+    </div>
+
+    <script type="text/javascript">
+        function generate() {
+            var form = document.getElementsByClassName("form")[0];
+            form.style.display = "none";
+            var maze = document.getElementsByClassName("maze")[0];
+            maze.style.display= "block";
+
+            setup();
+        }
+
+        function download() {
+             html2canvas($("#mainCanvas"), {
+                onrendered: function(canvas) {
+                    var page_width = 215 - 20;
+                    var page_height = 279 - 20;
+
+                    var img_width;
+                    var img_height;
+                    var orientation;
+                    if (canvas.width > canvas.height) {
+                        orientation = 'l';
+                        img_width = page_height;
+                        var scale = page_height / canvas.width;
+                        img_height = canvas.height * scale;
+                    }
+                    else {
+                        orientation = 'p';
+                        img_height = page_height;
+                        var scale = page_height/ canvas.height;
+                        img_width = canvas.width * scale;
+                    }
+
+                    console.log(img_width, img_height);
+
+                    var imgData = canvas.toDataURL('image/png');
+                    var doc = new jsPDF(orientation, 'mm', 'letter');
+                    doc.addImage(imgData, 'PNG', 10, 10, img_width, img_height);
+                    doc.save('maze.pdf');
+                }
+            });
+        }
+
+        function reload() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

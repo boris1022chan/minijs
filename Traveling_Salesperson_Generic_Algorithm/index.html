@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="findPath.js"></script>
+
+    <title>Traveling Salesperson</title>
+</head>
+<body>
+    <p>
+        Click on Canvas to add point and click button to find shortest path (not supported by IE)<br/>
+        Use dev tool (F12) to track generations
+    </p>
+
+    <canvas id="myCanvas" width="800" height="600" style="background: #333333"></canvas>
+    <script type="text/javascript" src="addPoints.js"></script>
+
+    <div style="display: block;">
+        <button style="display: inline-block;" onclick="btnClick()">Find Best Path</button>
+        <button style="display: inline-block;" onclick="reload()">Try Another</button>
+        <script type="text/javascript">
+            function reload() {
+                location.reload();
+            }
+        </script>
+        </div>
+</body>
+</html>

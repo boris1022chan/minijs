@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous">
+
+    <style type="text/css">
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            -webkit-transition: background-color 1000ms ease-in-out;
+            -moz-transition: background-color 1000ms ease-in-out;
+            -o-transition: background-color 1000ms ease-in-out;
+            -ms-transition: background-color 1000ms ease-in-out;
+            transition: background-color 1000ms ease-in-out;
+        }
+
+        #welcome {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-header {
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var colors = ['#DAA89B', '#93A8AC', '#F0F2EF', '#E2B4BD', '#9B6A6C'];
+        var count = 0;
+
+        setInterval(function(){
+            $('.wrapper').css('background-color', colors[count]);
+            count++;
+            if (count >= colors.length) {count = 0};
+        }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mini JS</a>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./Maze_Generator/index.html">Maze Generator</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Traveling Salesperson
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="./Traveling_Salesperson_Lexicographic_Order/index.html">Lexicographic Order</a>
+                  <a class="dropdown-item" href="./Traveling_Salesperson_Generic_Algorithm/index.html">Generic Algorithm</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div id="welcome">
+            <div class="container main-header">
+                <h1>Welcome to Mini JS</h1>
+                <p>Choose a project from the navigation bar to view</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
