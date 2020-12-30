@@ -1,6 +1,5 @@
 # Maze Generator
-## Introduction
-This project uses maze generation algorithm to auto-generate a maze. This project is inspired by Youtube Channel - The Coding Train with my own tweak of features.
+This maze generator uses randomize depth-first search algorithm to generate a maze.
 
 ## Features
 version 2.2 <br>

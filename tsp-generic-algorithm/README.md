@@ -1,8 +1,5 @@
 # TSP - Generic Algorithm
-## Introduction
-This project is an "improved" version of my previous travelling saleperson project that uses Lexicographic-Order. 
-This is version is based on Youtube channel TheCodeTrain and it is my first attempt with generic algorithm.
+Travelling salesman problem is an NP-hard question that tries to find the shortest possible path where each point is visited exactly once. This project uses generic algorithm to improve the runtime compare to my previous project which uses lexicographic order.
 
-
-## Features
-calculating fitness level, natural selection, and mutation
+## Usage
+Click anywhere in the HTML canvas to add a point. After you are satisfied, click "find best path" button to let the algorithm run. 
